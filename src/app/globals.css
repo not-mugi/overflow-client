@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --breakpoint-3xl: 120rem;
+
+  --color-mugi-red-50: #fdf3f3;
+  --color-mugi-red-100: #fbe5e5;
+  --color-mugi-red-200: #f8d1d0;
+  --color-mugi-red-300: #f2b0af;
+  --color-mugi-red-400: #e88381;
+  --color-mugi-red-500: #db5a58;
+  --color-mugi-red-600: #c73d3b;
+  --color-mugi-red-700: #9e2e2c;
+  --color-mugi-red-800: #8a2c2a;
+  --color-mugi-red-900: #742928;
+  --color-mugi-red-950: #3e1211;
+
+  --color-mugi-bg-50: #fef9ee;
+  --color-mugi-bg-100: #fcf1d8;
+  --color-mugi-bg-200: #f7deb1;
+  --color-mugi-bg-300: #f1c071;
+  --color-mugi-bg-400: #eca44b;
+  --color-mugi-bg-500: #e78a28;
+  --color-mugi-bg-600: #d9711d;
+  --color-mugi-bg-700: #b4571a;
+  --color-mugi-bg-800: #8f451d;
+  --color-mugi-bg-900: #743b1a;
+  --color-mugi-bg-950: #3e1c0c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
