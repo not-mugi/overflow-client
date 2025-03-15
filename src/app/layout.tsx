@@ -6,14 +6,8 @@ import "./globals.css";
 import TopNavigation from "@/lib/components/navigation/TopNavigation";
 import SideNavigation from "@/lib/components/navigation/SideNavigation";
 
-const MugiFonts = localFont({
+const mugi_local_fonts = localFont({
   src : [
-    {
-      path : "../lib/fonts/SFMonoMedium.otf",
-    },
-    {
-      path : "../lib/fonts/SFMonoLight.otf",
-    },
     {
       path : "../lib/fonts/NotoSansMyanmar.woff2",
     }
@@ -33,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${MugiFonts.className} antialiased tracking-tighter`}
+        className={`font-sans ${mugi_local_fonts.className} antialiased`}
       >
         <header>
           <TopNavigation />
