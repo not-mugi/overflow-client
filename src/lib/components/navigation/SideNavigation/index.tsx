@@ -18,19 +18,19 @@ export default function SideNavigation() {
       <ul className="mt-6 pr-2">
         <li>
           <Link href="/" className={styles.li.selected}>
-            <Image src={FeedIcon} alt="feed icon" width={20} height={20} />
+            {/* <Image src={FeedIcon} alt="feed icon" width={20} height={20} /> */}
             <legend>Feed</legend>
           </Link>
         </li>
         <li>
           <Link href="/questions" className={styles.li.normal}>
-            <Image src={QuestionsIcon} alt="questions icon" width={20} height={20} />
+            {/* <Image src={QuestionsIcon} alt="questions icon" width={20} height={20} /> */}
             <legend>Questions</legend>
           </Link>
         </li>
         <li>
           <Link href="/tags" className={styles.li.normal}>
-            <Image src={TagsIcon} alt="tags icon" width={20} height={20} />
+            {/* <Image src={TagsIcon} alt="tags icon" width={20} height={20} /> */}
             <legend>Tags</legend>
           </Link>
         </li>

@@ -32,12 +32,12 @@ export default function RootLayout({
         <header>
           <TopNavigation />
         </header>
-        <section className="relative">
+        <main className="relative">
           <SideNavigation />
-          <main className="mt-14 max-xl:mx-5 max-2xl:mx-20 max-3xl:mx-40 mx-80 md:pl-50 p-5 h-screen">
+          <section className="mt-14 max-xl:mx-5 max-2xl:mx-20 max-3xl:mx-40 mx-80 md:pl-50 p-5 h-screen">
             {children}
-          </main>
-        </section>
+          </section>
+        </main>
       </body>
     </html>
   );
