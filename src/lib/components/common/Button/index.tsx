@@ -1,9 +1,11 @@
 export interface IButton {
   text: string;
   theme: "dark" | "light";
+  size? : "xs" | "sm" | "md" | "xl",
+  rounded? : "xs" | "sm" | "md" | "xl" | "none",
 }
 
-export default function Button({ theme = "light", text = "Button" }: IButton) {
+export default function Button({ theme = "light", text = "Button", rounded = "none", size = "xs" }: IButton) {
   const styles = {
     theme: {
       light:

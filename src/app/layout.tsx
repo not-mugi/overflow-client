@@ -2,17 +2,16 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 
 import "./globals.css";
-
-import TopNavigation from "@/lib/components/navigation/TopNavigation";
-import SideNavigation from "@/lib/components/navigation/SideNavigation";
+import Header from "@/lib/components/navigation/Header";
+import Sidebar from "@/lib/components/navigation/Sidebar";
 
 const mugi_local_fonts = localFont({
-  src : [
+  src: [
     {
-      path : "../lib/fonts/NotoSansMyanmar.woff2",
-    }
-  ]
-})
+      path: "../lib/fonts/NotoSansMyanmar.woff2",
+    },
+  ],
+});
 
 export const metadata: Metadata = {
   title: "Mugi Overflow",
@@ -26,18 +25,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`font-sans ${mugi_local_fonts.className} antialiased`}
-      >
-        <header>
-          <TopNavigation />
-        </header>
-        <main className="relative">
-          <SideNavigation />
-          <section className="mt-14 max-xl:mx-5 max-2xl:mx-20 max-3xl:mx-40 mx-80 md:pl-50 p-5 h-screen">
-            {children}
-          </section>
-        </main>
+      <body className={`font-sans ${mugi_local_fonts.className} antialiased`}>
+        <div className="w-screen h-screen flex flex-col">
+          <Header />
+          <div className="container mx-auto flex grow w-full">
+            <Sidebar />
+            <main className="flex-1 bg-mugi-400/20 py-4 px-24">
+              {children}
+            </main>
+          </div>
+        </div>
       </body>
     </html>
   );

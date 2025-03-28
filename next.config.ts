@@ -8,7 +8,11 @@ const nextConfig: NextConfig = {
     });
 
     return config;
-  }
+  },
+   i18n: {
+    locales: ['en-US', 'mm'],
+    defaultLocale: 'en-US',
+  },
 };
 
 export default nextConfig;

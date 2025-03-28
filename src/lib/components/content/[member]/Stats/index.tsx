@@ -60,7 +60,7 @@ export function WatchingTags({ tags = [] }: IWatchedTags) {
         )}
       </div>
       <div className="w-full p-2">
-        <Button text="Customize Watchlist" theme="light" />
+        <p className="text-xs font-light text-gray-400">Customize your feed by watching tags</p>
       </div>
     </div>
   );
