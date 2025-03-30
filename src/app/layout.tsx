@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 
 import "./globals.css";
-import Header from "@/lib/components/navigation/Header";
-import Sidebar from "@/lib/components/navigation/Sidebar";
+import Header from "@/components/header";
+import Sidebar from "@/components/sidebar";
 
 const mugi_local_fonts = localFont({
   src: [
     {
-      path: "../lib/fonts/NotoSansMyanmar.woff2",
+      path: "../fonts/NotoSansMyanmar.woff2",
     },
   ],
 });
@@ -26,13 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans ${mugi_local_fonts.className} antialiased`}>
-        <div className="w-screen h-screen flex flex-col">
+        <div className="min-h-screen bg-gray-100">
           <Header />
-          <div className="container mx-auto flex grow w-full">
+          <div className="flex">
             <Sidebar />
-            <main className="flex-1 bg-mugi-400/20 py-4 px-24">
-              {children}
-            </main>
+            <main className="flex-1">{children}</main>
           </div>
         </div>
       </body>
