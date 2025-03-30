@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { ArrowUp, ArrowDown, MessageSquare, Eye } from "lucide-react";
+
 import type { Question } from "@/lib/types";
 
 interface QuestionCardProps {
@@ -46,7 +48,7 @@ export default function QuestionCard({ question }: QuestionCardProps) {
         </div>
         <div className="mt-4 flex items-center justify-end">
           <div className="flex items-center">
-            <img
+            <Image
               src={question.author.avatar}
               alt={question.author.name}
               className="h-8 w-8 rounded-full"
