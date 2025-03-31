@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/header";
 import Sidebar from "@/components/sidebar";
+import Footer from "@/components/footer";
 
 const mugi_local_fonts = localFont({
   src: [
@@ -25,13 +26,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans ${mugi_local_fonts.className} antialiased`}>
+      <body className={`antialiased`}>
         <div className="min-h-screen bg-gray-100">
           <Header />
-          <div className="flex">
+          <div className={`flex ${mugi_local_fonts.className}`}>
             <Sidebar />
             <main className="flex-1">{children}</main>
           </div>
+          <Footer />
         </div>
       </body>
     </html>

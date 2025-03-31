@@ -9,7 +9,7 @@ interface QuestionCardProps {
 
 export default function QuestionCard({ question }: QuestionCardProps) {
   return (
-    <div className="flex gap-4 p-4 border-b hover:bg-gray-50">
+    <div className="flex gap-4 p-4 border-b border-gray-200 hover:bg-gray-50">
       <div className="flex flex-col items-center gap-2 min-w-[80px]">
         <div className="flex flex-col items-center text-gray-600">
           <button className="p-1 hover:bg-gray-100 rounded">
@@ -51,7 +51,9 @@ export default function QuestionCard({ question }: QuestionCardProps) {
             <Image
               src={question.author.avatar}
               alt={question.author.name}
-              className="h-8 w-8 rounded-full"
+              width={32}
+              height={32}
+              className="rounded-full"
             />
             <div className="ml-2">
               <a

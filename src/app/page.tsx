@@ -38,26 +38,93 @@ const SAMPLE_QUESTIONS = [
     },
     createdAt: "5 hours ago",
   },
+  {
+    id: 3,
+    title: "Understanding React useEffect cleanup function",
+    body: "I'm having trouble understanding when and why to use the cleanup function in useEffect. Can someone explain with practical examples?",
+    votes: 28,
+    answers: 3,
+    views: 856,
+    tags: ["reactjs", "javascript", "hooks"],
+    author: {
+      id: 2,
+      name: "Jane Smith",
+      avatar:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      reputation: 8432,
+    },
+    createdAt: "5 hours ago",
+  },
+  {
+    id: 4,
+    title: "Understanding React useEffect cleanup function",
+    body: "I'm having trouble understanding when and why to use the cleanup function in useEffect. Can someone explain with practical examples?",
+    votes: 28,
+    answers: 3,
+    views: 856,
+    tags: ["reactjs", "javascript", "hooks"],
+    author: {
+      id: 2,
+      name: "Jane Smith",
+      avatar:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      reputation: 8432,
+    },
+    createdAt: "5 hours ago",
+  },
+  {
+    id: 5,
+    title: "Understanding React useEffect cleanup function",
+    body: "I'm having trouble understanding when and why to use the cleanup function in useEffect. Can someone explain with practical examples?",
+    votes: 28,
+    answers: 3,
+    views: 856,
+    tags: ["reactjs", "javascript", "hooks"],
+    author: {
+      id: 2,
+      name: "Jane Smith",
+      avatar:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      reputation: 8432,
+    },
+    createdAt: "5 hours ago",
+  },
+  {
+    id: 6,
+    title: "Understanding React useEffect cleanup function",
+    body: "I'm having trouble understanding when and why to use the cleanup function in useEffect. Can someone explain with practical examples?",
+    votes: 28,
+    answers: 3,
+    views: 856,
+    tags: ["reactjs", "javascript", "hooks"],
+    author: {
+      id: 2,
+      name: "Jane Smith",
+      avatar:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      reputation: 8432,
+    },
+    createdAt: "5 hours ago",
+  },
 ];
 
 export default function HomePage() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h1 className="text-3xl font-bold">Top Questions</h1>
-          <p className="text-gray-600 mt-1">
-            Get answers from developers around the world
-          </p>
-        </div>
-        <button className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
-          <PlusCircle className="h-5 w-5 mr-2" />
-          Ask Question
-        </button>
-      </div>
-
       <div className="flex gap-4">
         <div className="flex-1">
+          <div className="flex items-center justify-between mb-8">
+            <div>
+              <h1 className="text-3xl font-bold">Top Questions</h1>
+              <p className="text-gray-600 mt-1">
+                Get answers from developers around the world
+              </p>
+            </div>
+            <button className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+              <PlusCircle className="h-5 w-5 mr-2" />
+              Ask Question
+            </button>
+          </div>
           <div className="bg-white rounded-lg shadow">
             {SAMPLE_QUESTIONS.map((question) => (
               <QuestionCard key={question.id} question={question} />
@@ -78,14 +145,15 @@ export default function HomePage() {
               </li>
               <li>
                 <Link href="#" className="text-blue-600 hover:text-blue-800">
-                  What is the difference between &quot;git pull&quot; and &quot;git fetch&quot;?
+                  What is the difference between &quot;git pull&quot; and
+                  &quot;git fetch&quot;?
                 </Link>
                 <p className="text-sm text-gray-600">98k views</p>
               </li>
             </ul>
           </div>
 
-          <div className="mt-6 bg-white p-4 rounded-lg border">
+          <div className="mt-6 bg-white p-4 rounded-lg border border-gray-200">
             <h3 className="font-medium text-lg mb-2">Trending Tags</h3>
             <div className="flex flex-wrap gap-2">
               <Link
