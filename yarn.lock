@@ -3268,6 +3268,11 @@ ms@^2.1.1, ms@^2.1.3:
   resolved "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
+myanmar-numeral@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/myanmar-numeral/-/myanmar-numeral-1.0.0.tgz#7ce9da5666010d998f446242b7ae688f2707ae15"
+  integrity sha512-EUzdoKL4dkTQuYVxDC++VSyjZNGVL9JjTjGvuE46QF5LsPTjbvh5WOxpigDLLIDXNQBZKEk/1AqzHXu90vfVKQ==
+
 nanoid@^3.3.6, nanoid@^3.3.8:
   version "3.3.9"
   resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.3.9.tgz"
