@@ -12,35 +12,35 @@ import {
 
 export default function Sidebar() {
   return (
-    <aside className="md:block w-64 sticky top-20 max-h-[calc(100vh-64px)] bg-gray-50 border-r border-gray-200 p-4">
+    <aside className="md:block w-64 sticky overflow-y-auto top-[68px] max-h-[calc(100vh-64px)] bg-gray-50 border-r border-gray-200 p-4">
       <nav className="space-y-1">
         <Link
           href="/"
-          className="flex px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-700 rounded-md"
+          className="flex items-center px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-700 rounded-md"
         >
           <Home className="h-5 w-5 mr-3" />
           မူလစာမျက်နှာ
         </Link>
         <Link
           href="/questions"
-          className="flex px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-700 rounded-md"
+          className="flex items-center px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-700 rounded-md"
         >
           <HelpCircle className="h-5 w-5 mr-3" />
           မေးခွန်းများ
         </Link>
         <Link
           href="/tags"
-          className="flex px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-700 rounded-md"
+          className="flex items-center px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-700 rounded-md"
         >
           <Tag className="h-5 w-5 mr-3" />
           တဂ်များ
         </Link>
         <Link
           href="/users"
-          className="flex px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-700 rounded-md"
+          className="flex items-center px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-700 rounded-md"
         >
           <Users className="h-5 w-5 mr-3" />
-          User များ
+          ပါဝင်သူများ
         </Link>
 
         <div className="pt-4 mt-4 border-t border-gray-200">

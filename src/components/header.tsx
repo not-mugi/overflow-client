@@ -4,30 +4,19 @@ import Image from "next/image";
 import { Search, Menu, Bell, MessageSquare } from "lucide-react";
 
 import mugiOverflow from "@/assets/images/mugi/mugi-overflow.png";
+import BetaTag from "./ui/beta-tag";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
+    <header className="sticky top-0 z-50 bg-white border-b border-t-2 border-t-mugi-300 border-gray-200">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-4">
             <Menu className="h-6 w-6 text-gray-600 cursor-pointer md:hidden" />
             <Image alt="mugi-overflow-logo" src={mugiOverflow} />
             <nav className="hidden md:flex space-x-4">
-              <Link href="/" className="text-gray-600 hover:text-gray-900">
-                Home
-              </Link>
-              <Link
-                href="/questions"
-                className="text-gray-600 hover:text-gray-900"
-              >
-                Questions
-              </Link>
-              <Link href="/tags" className="text-gray-600 hover:text-gray-900">
-                Tags
-              </Link>
-              <Link href="/users" className="text-gray-600 hover:text-gray-900">
-                Users
+              <Link href="/blog" className="text-gray-600 hover:text-gray-900 relative">
+                ဘလော့ဂ် <BetaTag />
               </Link>
             </nav>
           </div>

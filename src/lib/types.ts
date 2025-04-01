@@ -25,3 +25,12 @@ export interface Answer {
   createdAt: string;
   accepted: boolean;
 }
+
+export interface Preferences {
+  topics : Topic[]
+}
+
+export interface Topic {
+  id: string;
+  name: string;
+}
