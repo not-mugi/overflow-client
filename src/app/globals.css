@@ -12,29 +12,38 @@
   --font-mono: var(--font-geist-mono);
   --breakpoint-3xl: 120rem;
 
-  --color-mugi-primary-300 : #80cbc4;
+  --text-xxs: 0.625rem;
+  --text-xxs--line-height: 0.45rem; 
+  --text-xxs--letter-spacing: 0.05rem; 
 
-  --color-mugi-sea-300 : #98D8EF;
-  --color-mugi-sea-400 : #4ebde2;
 
   --color-mugi-secondary-200 : #b4ebe6;
 
   --color-mugi-light-50 : #FBF8EF;
 
-  --color-mugi-400 : #FFB433;
-  --color-mugi-500 : #f98a07;
+  --color-mugi-red-50 : #fcf5f4;
+  --color-mugi-red-100 : #fae8e6;
+  --color-mugi-red-200 : #f6d5d2;
+  --color-mugi-red-300 : #efb7b2;
+  --color-mugi-red-400 : #e48c85;
+  --color-mugi-red-500 : #d35a50;
+  --color-mugi-red-600 : #a23b33;
+  --color-mugi-red-700 : #a23b33;
+  --color-mugi-red-800 : #87342d;
+  --color-mugi-red-900 : #71302b;
+  --color-mugi-red-950 : #3c1613;
 
-  --color-mugi-bg-50: #fef9ee;
-  --color-mugi-bg-100: #fcf1d8;
-  --color-mugi-bg-200: #f7deb1;
-  --color-mugi-bg-300: #f1c071;
-  --color-mugi-bg-400: #eca44b;
-  --color-mugi-bg-500: #e78a28;
-  --color-mugi-bg-600: #d9711d;
-  --color-mugi-bg-700: #b4571a;
-  --color-mugi-bg-800: #8f451d;
-  --color-mugi-bg-900: #743b1a;
-  --color-mugi-bg-950: #3e1c0c;
+  --color-mugi-50: #fef9ee;
+  --color-mugi-100: #fcf1d8;
+  --color-mugi-200: #f7deb1;
+  --color-mugi-300: #f1c071;
+  --color-mugi-400: #eca44b;
+  --color-mugi-500: #e78a28;
+  --color-mugi-600: #d9711d;
+  --color-mugi-700: #b4571a;
+  --color-mugi-800: #8f451d;
+  --color-mugi-900: #743b1a;
+  --color-mugi-950: #3e1c0c;
 }
 
 @media (prefers-color-scheme: dark) {
