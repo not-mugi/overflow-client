@@ -9,7 +9,7 @@ import Footer from "@/components/footer";
 const mugi_local_fonts = localFont({
   src: [
     {
-      path: "../fonts/NotoSansMyanmar.woff2",
+      path: "../fonts/Padauk-Regular.ttf",
     },
   ],
 });
@@ -26,10 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>
+      <body className={` ${mugi_local_fonts.className} antialiased`}>
         <div className="min-h-screen bg-gray-100">
           <Header />
-          <div className={`flex ${mugi_local_fonts.className}`}>
+          <div className={`flex`}>
             <Sidebar />
             <main className="flex-1">{children}</main>
           </div>
