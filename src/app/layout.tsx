@@ -1,18 +1,10 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 
 import "./globals.css";
 import Header from "@/components/header";
 import Sidebar from "@/components/sidebar";
 import Footer from "@/components/footer";
 
-const mugi_local_fonts = localFont({
-  src: [
-    {
-      path: "../fonts/NotoSansMyanmar.woff2",
-    },
-  ],
-});
 
 export const metadata: Metadata = {
   title: "Mugi Overflow",
@@ -29,7 +21,7 @@ export default function RootLayout({
       <body className={`antialiased`}>
         <div className="min-h-screen bg-gray-100">
           <Header />
-          <div className={`flex ${mugi_local_fonts.className}`}>
+          <div className={`flex`}>
             <Sidebar />
             <main className="flex-1">{children}</main>
           </div>
