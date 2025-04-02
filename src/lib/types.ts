@@ -34,3 +34,15 @@ export interface Topic {
   id: string;
   name: string;
 }
+
+export interface ModifiedHistory {
+  user: string;
+  status: string;
+  date: string;
+  time: string;
+}
+
+export interface Contributor {
+  username : string;
+  totalRepsEarned : string
+}

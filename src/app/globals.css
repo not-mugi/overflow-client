@@ -44,6 +44,13 @@
   --color-mugi-800: #8f451d;
   --color-mugi-900: #743b1a;
   --color-mugi-950: #3e1c0c;
+
+  --font-mm : "Padauk";
+}
+
+@font-face {
+  font-family : Padauk;
+  src : url("../fonts/Padauk-Regular.ttf");
 }
 
 @media (prefers-color-scheme: dark) {

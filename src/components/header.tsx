@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Search, Menu, Bell, MessageSquare } from "lucide-react";
 
 import mugiOverflow from "@/assets/images/mugi/mugi-overflow.png";
-import BetaTag from "./ui/beta-tag";
+import AbsoluteTag from "./ui/absolute-tag";
 
 export default function Header() {
   return (
@@ -16,7 +16,7 @@ export default function Header() {
             <Image alt="mugi-overflow-logo" src={mugiOverflow} />
             <nav className="hidden md:flex space-x-4">
               <Link href="/blog" className="text-gray-600 hover:text-gray-900 relative">
-                ဘလော့ဂ် <BetaTag />
+                <span className="font-mm">ဘလော့ဂ်</span> <AbsoluteTag content="wip" />
               </Link>
             </nav>
           </div>

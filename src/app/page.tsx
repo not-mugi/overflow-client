@@ -1,24 +1,19 @@
-import Manifesto from "@/components/ui/manifesto";
-import PreferencesTags from "@/components/ui/perference-tags";
 import {
   Clock,
   MessageCircleQuestion,
   TrendingUp,
   AppWindowMac,
 } from "lucide-react";
-import mn from "myanmar-numeral";
 
+import Manifesto from "@/components/ui/manifesto";
+import PreferencesTags from "@/components/ui/preference-tags";
+import HomeQuestionCard from "@/components/ui/home-question-card";
+import WeeklyContribution from "@/components/ui/weekly-contribution";
 interface UserPreferences {
   topics: string[];
   sortBy: "newest" | "trending" | "mostVoted";
 }
-export interface QuestionCardProps {
-  title: string;
-  tags: string[];
-  votes: number;
-  views: number;
-  answers: number;
-}
+
 export interface PreferencesModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -26,66 +21,67 @@ export interface PreferencesModalProps {
   onSave: (preferences: UserPreferences) => void;
 }
 
-function QuestionCard({
-  title,
-  tags,
-  votes,
-  views,
-  answers,
-}: QuestionCardProps) {
-  return (
-    <div className="flex gap-4 py-4 border-b border-gray-200">
-      <div className="flex flex-col items-center gap-2 w-45">
-        <div className="flex flex-col items-end text-gray-600 w-full">
-          <span className="font-medium">{mn(votes)} တုံ့ပြန်ချက်များ</span>
-        </div>
-        <div className="flex flex-col items-end text-gray-600 w-full">
-          <span className="font-medium">{mn(answers)} အဖြေများ</span>
-        </div>
-        <div className="flex flex-col items-end text-gray-600 w-full">
-          <span className="font-medium">{mn(views)} ကြည့်ရှုမှုများ</span>
-        </div>
-      </div>
-      <div className="flex-1">
-        <h3 className="text-lg font-medium text-blue-600 hover:text-blue-800 mb-2">
-          <a href="#">{title}</a>
-        </h3>
-        <div className="flex gap-2">
-          {tags.map((tag, index) => (
-            <span
-              key={index}
-              className="px-2 py-1 bg-blue-50 text-blue-600 rounded-md text-sm"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function HomePage() {
   const user = "Zwe Sithu";
   const priority: string = "trending";
+  const topContributors = [
+    {
+      username : "ကိုကို",
+      totalRepsEarned : "154"
+    },
+    {
+      username : "ကျော်ကျော်",
+      totalRepsEarned : "102"
+    },
+    {
+      username : "Kaung Si Thu",
+      totalRepsEarned : "94"
+    },
+    {
+      username : "Maung Maung",
+      totalRepsEarned : "89"
+    },
+    {
+      username : "KaungKaung",
+      totalRepsEarned : "70"
+    },
+    {
+      username : "ZawZaw",
+      totalRepsEarned : "69"
+    },
+    {
+      username : "MinZaw",
+      totalRepsEarned : "66"
+    },
+    {
+      username : "Bo Bo",
+      totalRepsEarned : "57"
+    },
+    {
+      username : "ET",
+      totalRepsEarned : "54"
+    },
+    {
+      username : "cloudff7",
+      totalRepsEarned : "32"
+    },
+  ]
   return (
     <div className="container mx-auto px-4 py-8 min-h-screen">
-      <div className="flex gap-4">
+      <div className="flex md:gap-4">
         <div className="flex-1">
           <div className="flex items-center justify-between mb-8">
             <div>
               <h1 className="text-2xl">
-                ပြန်လည်ကြိုဆိုပါတယ်!{" "}
-                <span className="font-light text-mugi-red-500 text-3xl">
-                  {user}
-                </span>
+                <span className="font-mm">ပြန်လည်ကြိုဆိုပါတယ်!</span>{" "}
+                <span className="text-mugi-red-500 text-3xl">{user}</span>
               </h1>
             </div>
           </div>
           <div className="flex items-center justify-between gap-4 mb-6">
             <div>
               <button
-                className={`px-3 py-1.5 rounded-md ${
+                className={`font-mm px-3 py-1.5 rounded-md ${
                   priority === "newest"
                     ? "bg-orange-100 text-orange-600"
                     : "text-gray-600 hover:bg-gray-100"
@@ -95,7 +91,7 @@ export default function HomePage() {
                 မေးခွန်းသစ်များ
               </button>
               <button
-                className={`px-3 py-1.5 rounded-md ${
+                className={`font-mm px-3 py-1.5 rounded-md ${
                   priority === "trending"
                     ? "bg-orange-100 text-orange-600"
                     : "text-gray-600 hover:bg-gray-100"
@@ -105,7 +101,7 @@ export default function HomePage() {
                 အဖြေမရှိသေးသော
               </button>
               <button
-                className={`px-3 py-1.5 rounded-md ${
+                className={`font-mm px-3 py-1.5 rounded-md ${
                   priority === "mostVoted"
                     ? "bg-orange-100 text-orange-600"
                     : "text-gray-600 hover:bg-gray-100"
@@ -115,38 +111,57 @@ export default function HomePage() {
                 တုံ့ပြန်ချက်အများဆုံး
               </button>
             </div>
-            <button className="flex items-center px-4 py-2 font-black bg-mugi-300 text-mugi-red-500 rounded-md hover:bg-mugi-400 cursor-pointer">
+            <button className="flex items-center px-4 py-2 font-mm font-black bg-mugi-300 text-mugi-red-500 rounded-md hover:bg-mugi-400 cursor-pointer">
               <AppWindowMac className="h-5 w-5 mr-2" />
               မေးခွန်းမေးမည်
             </button>
           </div>
           <div className="bg-white rounded-lg shadow">
-            <QuestionCard
+            <HomeQuestionCard
               title="How to implement authentication with Next.js and Supabase?"
               tags={["next.js", "authentication", "supabase"]}
               votes={42}
               views={1234}
               answers={5}
+              lastModified={{
+                user: "မောင်မောင်",
+                status: "answered",
+                date: "2025-04-02",
+                time: "15:05",
+              }}
             />
-            <QuestionCard
+            <HomeQuestionCard
               title="Best practices for React state management in 2024"
               tags={["react", "javascript", "state-management"]}
               votes={38}
               views={982}
               answers={7}
+              lastModified={{
+                user: "ကျော်ကျော်",
+                status: "modified",
+                date: "2025-04-01",
+                time: "22:30",
+              }}
             />
-            <QuestionCard
-              title="Understanding TypeScript generics with practical examples"
+            <HomeQuestionCard
+              title="Understanding TypeScript generics with practical examples for some reason this shit has been long for more than normal. It wont end unless you stop typing. But i will make it as long as possible just to demonstrate line clamp attribute."
               tags={["typescript", "generics", "javascript"]}
               votes={56}
               views={2341}
               answers={12}
+              lastModified={{
+                user: "စည်သူ",
+                status: "asked",
+                date: "2025-04-01",
+                time: "13:24",
+              }}
             />
           </div>
         </div>
         <div>
           <Manifesto />
           <PreferencesTags />
+          <WeeklyContribution topContributors={topContributors} />
         </div>
       </div>
     </div>

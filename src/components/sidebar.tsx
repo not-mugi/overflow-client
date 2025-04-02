@@ -12,8 +12,8 @@ import {
 
 export default function Sidebar() {
   return (
-    <aside className="md:block w-64 sticky overflow-y-auto top-[68px] max-h-[calc(100vh-64px)] bg-gray-50 border-r border-gray-200 p-4">
-      <nav className="space-y-1">
+    <aside className="hidden md:block w-64 sticky overflow-y-auto top-[68px] max-h-[calc(100vh-64px)] bg-gray-50 border-r border-gray-200 p-4">
+      <nav className="space-y-1 font-mm">
         <Link
           href="/"
           className="flex items-center px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-700 rounded-md"
