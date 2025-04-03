@@ -42,8 +42,8 @@ export default function WeeklyContribution({
     <div className="hidden lg:block w-80">
       <div className="bg-white shadow rounded-lg p-4 mb-6">
         <div className="flex justify-between items-center">
-          <h1 className="font-black items-center justify-between">
-            <span className="font-mono font-semibold">Weekly</span> <span className="font-mm">ပါဝင်မှုများ</span>
+          <h1 className="items-center justify-between">
+            <span className="font-mono">Weekly</span> <span className="font-mm">ပါဝင်မှုများ</span>
           </h1>
           <table className="text-xs font-mm">
             <tbody className="">

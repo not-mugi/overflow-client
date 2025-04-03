@@ -126,7 +126,7 @@ export default function PreferencesTags() {
       <div className="hidden lg:block w-80">
         <div className="bg-white shadow rounded-lg p-4 mb-6">
           <div className="flex items-center justify-between">
-            <span className="font-mm font-black">မူလစာမျက်နှာ ဆက်တင်များ</span>
+            <span className="font-mm">မူလစာမျက်နှာ ဆက်တင်များ</span>
             <button
               onClick={() => setIsPreferencesOpen(true)}
               className="p-1 cursor-pointer bg-mugi-300 rounded-md hover:bg-mugi-400"
