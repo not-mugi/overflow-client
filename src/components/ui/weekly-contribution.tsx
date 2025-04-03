@@ -15,8 +15,8 @@ interface WeeklyContributionProps {
 
 const leaderboard_genre_classes = {
   selected:
-    "bg-mugi-300 text-mugi-red-500 hover:bg-gray-50 hover:text-gray-500",
-  normal: "bg-gray-50 hover:bg-mugi-100 hover:text-mugi-red-500",
+    "bg-mugi-300 text-mugi-red-500",
+  normal: "hover:bg-mugi-100 hover:text-mugi-red-500",
 };
 
 const trophy_tailwind_classes = {
@@ -40,18 +40,18 @@ export default function WeeklyContribution({
 
   return (
     <div className="hidden lg:block w-80">
-      <div className="bg-white shadow rounded-lg p-4 mb-6 font-mm">
+      <div className="bg-white shadow rounded-lg p-4 mb-6">
         <div className="flex justify-between items-center">
           <h1 className="font-black items-center justify-between">
-            အပတ်စဥ် ပါဝင်မှုများ
+            <span className="font-mono font-semibold">Weekly</span> <span className="font-mm">ပါဝင်မှုများ</span>
           </h1>
-          <table className="text-xs">
+          <table className="text-xs font-mm">
             <tbody className="">
               <tr className="">
                 <td className="">
                   <button
                     onClick={() => selectGenre("q")}
-                    className={`font-bold px-0.5 py-1 text-xs cursor-pointer border-gray-300 rounded-l-sm border 
+                    className={`py-2 px-1 text-xs cursor-pointer border-gray-300/30 rounded-l-sm border-2 
                       ${
                         selectedGenre === "q"
                           ? leaderboard_genre_classes["selected"]
@@ -63,8 +63,8 @@ export default function WeeklyContribution({
                 </td>
                 <td className="">
                   <button
-                    onClick={() => selectGenre("a")}
-                    className={`font-bold px-0.5 py-1 text-xs cursor-pointer border-gray-300 border-y relative 
+                    // onClick={() => selectGenre("a")}
+                    className={`py-2 px-1 text-xs cursor-not-allowed border-gray-300/30 border-y-2 relative 
                       ${
                         selectedGenre === "a"
                           ? leaderboard_genre_classes["selected"]
@@ -77,7 +77,7 @@ export default function WeeklyContribution({
                 <td className="">
                   <button
                     onClick={() => selectGenre("all")}
-                    className={`font-bold px-0.5 py-1 text-xs cursor-pointer border-gray-300 rounded-r-sm border 
+                    className={`py-2 px-1 text-xs cursor-pointer border-gray-300/30 rounded-r-sm border-2 
                       ${
                         selectedGenre === "all"
                           ? leaderboard_genre_classes["selected"]
