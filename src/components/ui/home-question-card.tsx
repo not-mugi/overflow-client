@@ -1,27 +1,17 @@
 import mn from "myanmar-numeral";
 
 import getBurmeseMonth from "@/lib/date";
-import { ModifiedHistory } from "@/lib/types";
+import { HomeQuestion } from "@/lib/types";
 
 interface QuestionCardProps {
-  title: string;
-  tags: string[];
-  votes: number;
-  views: number;
-  answers: number;
-  lastModified: ModifiedHistory;
+  question: HomeQuestion;
 }
 
 export default function HomeQuestionCard({
-  title,
-  tags,
-  votes,
-  views,
-  answers,
-  lastModified,
+  question: { title, votes, views, answers, tags, history },
 }: QuestionCardProps) {
   const currentDate = new Date();
-  const modifiedDate = new Date(lastModified.date);
+  const modifiedDate = new Date(history.date);
 
   let date = "";
   if (
@@ -40,7 +30,7 @@ export default function HomeQuestionCard({
     )} ရက်နေ့`;
   }
 
-  const time = lastModified.time.split(":");
+  const time = history.time.split(":");
 
   const status = {
     answered: "ဖြေခဲ့သည်။",
@@ -81,11 +71,9 @@ export default function HomeQuestionCard({
         </div>
         <div className="font-mm px-4 text-sm flex items-center justify-end w-full">
           <span>
-            <span className="text-mugi-red-500 font-bold">
-              {lastModified.user}
-            </span>{" "}
+            <span className="text-mugi-red-500 font-bold">{history.user}</span>{" "}
             မှ {date} {mn(time[0])} : {mn(time[1])} တွင်{" "}
-            {status[lastModified.status as keyof typeof status]}
+            {status[history.status as keyof typeof status]}
           </span>
         </div>
       </div>
