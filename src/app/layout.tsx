@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        <div className="min-h-screen bg-gray-100">
+        <div className="min-h-screen">
           <Header />
           <div className={`flex`}>
             <Sidebar />
