@@ -16,7 +16,7 @@ interface WeeklyContributionProps {
 const leaderboard_genre_classes = {
   selected:
     "bg-mugi-300 text-mugi-red-500",
-  normal: "hover:bg-mugi-100 hover:text-mugi-red-500",
+  normal: "hover:bg-mugi-300 hover:text-mugi-red-500",
 };
 
 const trophy_tailwind_classes = {
@@ -45,26 +45,26 @@ export default function WeeklyContribution({
           <h1 className="items-center justify-between">
             <span className="font-mono">Weekly</span> <span className="font-mm">ပါဝင်မှုများ</span>
           </h1>
-          <table className="text-xs font-mm">
+          <table className="text-sm font-mm">
             <tbody className="">
               <tr className="">
                 <td className="">
                   <button
                     onClick={() => selectGenre("q")}
-                    className={`py-2 px-1 text-xs cursor-pointer border-gray-300/30 rounded-l-sm border-2 
+                    className={`py-2 px-1 cursor-pointer border-gray-300/30 rounded-l-sm border-2 
                       ${
                         selectedGenre === "q"
                           ? leaderboard_genre_classes["selected"]
                           : leaderboard_genre_classes["normal"]
                       }`}
                   >
-                    အမေးအဖြေ
+                    မေးခွန်း
                   </button>
                 </td>
-                <td className="">
+                <td>
                   <button
                     // onClick={() => selectGenre("a")}
-                    className={`py-2 px-1 text-xs cursor-not-allowed border-gray-300/30 border-y-2 relative 
+                    className={`py-2 px-1 cursor-not-allowed border-gray-300/30 border-y-2 relative 
                       ${
                         selectedGenre === "a"
                           ? leaderboard_genre_classes["selected"]
@@ -77,7 +77,7 @@ export default function WeeklyContribution({
                 <td className="">
                   <button
                     onClick={() => selectGenre("all")}
-                    className={`py-2 px-1 text-xs cursor-pointer border-gray-300/30 rounded-r-sm border-2 
+                    className={`py-2 px-1 cursor-pointer border-gray-300/30 rounded-r-sm border-2 
                       ${
                         selectedGenre === "all"
                           ? leaderboard_genre_classes["selected"]

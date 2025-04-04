@@ -1,9 +1,4 @@
-import {
-  Clock,
-  MessageCircleQuestion,
-  TrendingUp,
-  AppWindowMac,
-} from "lucide-react";
+import { AppWindowMac } from "lucide-react";
 
 import Manifesto from "@/components/ui/manifesto";
 import PreferencesTags from "@/components/ui/preference-tags";
@@ -83,51 +78,50 @@ const SAMPLE_HOME_CONTENT: HomeQuestion[] = [
 ];
 
 const TOP_CONTRIBUTORS = [
-    {
-      username: "ကိုကို",
-      totalRepsEarned: "154",
-    },
-    {
-      username: "ကျော်ကျော်",
-      totalRepsEarned: "102",
-    },
-    {
-      username: "Kaung Si Thu",
-      totalRepsEarned: "94",
-    },
-    {
-      username: "Maung Maung",
-      totalRepsEarned: "89",
-    },
-    {
-      username: "KaungKaung",
-      totalRepsEarned: "70",
-    },
-    {
-      username: "ZawZaw",
-      totalRepsEarned: "69",
-    },
-    {
-      username: "MinZaw",
-      totalRepsEarned: "66",
-    },
-    {
-      username: "Bo Bo",
-      totalRepsEarned: "57",
-    },
-    {
-      username: "ET",
-      totalRepsEarned: "54",
-    },
-    {
-      username: "cloudff7",
-      totalRepsEarned: "32",
-    },
-  ];
+  {
+    username: "ကိုကို",
+    totalRepsEarned: "154",
+  },
+  {
+    username: "ကျော်ကျော်",
+    totalRepsEarned: "102",
+  },
+  {
+    username: "Kaung Si Thu",
+    totalRepsEarned: "94",
+  },
+  {
+    username: "Maung Maung",
+    totalRepsEarned: "89",
+  },
+  {
+    username: "KaungKaung",
+    totalRepsEarned: "70",
+  },
+  {
+    username: "ZawZaw",
+    totalRepsEarned: "69",
+  },
+  {
+    username: "MinZaw",
+    totalRepsEarned: "66",
+  },
+  {
+    username: "Bo Bo",
+    totalRepsEarned: "57",
+  },
+  {
+    username: "ET",
+    totalRepsEarned: "54",
+  },
+  {
+    username: "cloudff7",
+    totalRepsEarned: "32",
+  },
+];
 
 export default function HomePage() {
   const user = "Zwe Sithu";
-  const priority: string = "trending";
   return (
     <div className="container mx-auto px-4 py-8 min-h-screen">
       <div className="flex md:gap-4">
@@ -136,43 +130,15 @@ export default function HomePage() {
             <div>
               <h1 className="text-3xl">
                 <span className="font-mm">ပြန်လည်ကြိုဆိုပါတယ်!</span>{" "}
-                <span className="text-mugi-red-500 text-3xl">{user}</span>
+                <span className="text-mugi-red-500">{user}</span>
               </h1>
             </div>
           </div>
           <div className="flex items-center justify-between gap-4 mb-6">
-            <div>
-              <button
-                className={`font-mm px-3 py-1.5 rounded-md ${
-                  priority === "newest"
-                    ? "bg-orange-100 text-orange-600"
-                    : "text-gray-600 hover:bg-gray-100"
-                }`}
-              >
-                <Clock className="w-4 h-4 inline mr-1" />
-                မေးခွန်းသစ်များ
-              </button>
-              <button
-                className={`font-mm px-3 py-1.5 rounded-md ${
-                  priority === "trending"
-                    ? "bg-orange-100 text-orange-600"
-                    : "text-gray-600 hover:bg-gray-100"
-                }`}
-              >
-                <MessageCircleQuestion className="w-4 h-4 inline mr-1" />
-                အဖြေမရှိသေးသော
-              </button>
-              <button
-                className={`font-mm px-3 py-1.5 rounded-md ${
-                  priority === "mostVoted"
-                    ? "bg-orange-100 text-orange-600"
-                    : "text-gray-600 hover:bg-gray-100"
-                }`}
-              >
-                <TrendingUp className="w-4 h-4 inline mr-1" />
-                တုံ့ပြန်ချက်အများဆုံး
-              </button>
-            </div>
+            <span className="text-gray-500">
+              မူလစာမျက်နှာကို ကြည့်ရူခဲ့သော မှတ်တမ်းများနှင့်
+              စောင့်ကြည့်ထားသောတဂ်များ အလိုက်ဖော်ပြထားပါသည်။
+            </span>
             <button className="flex items-center px-4 py-2 font-mm font-black bg-mugi-300 text-mugi-red-500 rounded-md hover:bg-mugi-400 cursor-pointer">
               <AppWindowMac className="h-5 w-5 mr-2" />
               မေးခွန်းမေးမည်
