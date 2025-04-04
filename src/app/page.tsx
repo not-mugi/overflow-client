@@ -9,6 +9,7 @@ import Manifesto from "@/components/ui/manifesto";
 import PreferencesTags from "@/components/ui/preference-tags";
 import HomeQuestionCard from "@/components/ui/home-question-card";
 import WeeklyContribution from "@/components/ui/weekly-contribution";
+import { HomeQuestion } from "@/lib/types";
 interface UserPreferences {
   topics: string[];
   sortBy: "newest" | "trending" | "mostVoted";
@@ -21,58 +22,118 @@ export interface PreferencesModalProps {
   onSave: (preferences: UserPreferences) => void;
 }
 
+const SAMPLE_HOME_CONTENT: HomeQuestion[] = [
+  {
+    id: "feed-1",
+    title: "How to implement authentication with Next.js and Supabase?",
+    tags: ["next.js", "authentication", "supabase"],
+    votes: 42,
+    views: 1234,
+    answers: 5,
+    history: {
+      user: "မောင်မောင်",
+      status: "answered",
+      date: "2025-04-02",
+      time: "15:05",
+    },
+  },
+  {
+    id: "feed-2",
+    title: "Best practices for React state management in 2024?",
+    tags: ["typescript", "generics", "javascript"],
+    votes: 38,
+    views: 982,
+    answers: 7,
+    history: {
+      user: "ကျော်ကျော်",
+      status: "modified",
+      date: "2025-04-01",
+      time: "22:30",
+    },
+  },
+  {
+    id: "feed-3",
+    title: "How to implement authentication with Next.js and Supabase?",
+    tags: ["next.js", "authentication", "supabase"],
+    votes: 42,
+    views: 33,
+    answers: 5,
+    history: {
+      user: "မောင်မောင်",
+      status: "answered",
+      date: "2025-04-02",
+      time: "15:05",
+    },
+  },
+  {
+    id: "feed-4",
+    title:
+      "Understanding TypeScript generics with practical examples for some reason this shit has been long for more than normal. It wont end unless you stop typing. But i will make it as long as possible just to demonstrate line clamp attribute.?",
+    tags: ["typescript", "generics", "javascript"],
+    votes: 0,
+    views: 4,
+    answers: 2,
+    history: {
+      user: "စည်သူ",
+      status: "asked",
+      date: "2025-04-01",
+      time: "13:24",
+    },
+  },
+];
+
 export default function HomePage() {
   const user = "Zwe Sithu";
   const priority: string = "trending";
   const topContributors = [
     {
-      username : "ကိုကို",
-      totalRepsEarned : "154"
+      username: "ကိုကို",
+      totalRepsEarned: "154",
     },
     {
-      username : "ကျော်ကျော်",
-      totalRepsEarned : "102"
+      username: "ကျော်ကျော်",
+      totalRepsEarned: "102",
     },
     {
-      username : "Kaung Si Thu",
-      totalRepsEarned : "94"
+      username: "Kaung Si Thu",
+      totalRepsEarned: "94",
     },
     {
-      username : "Maung Maung",
-      totalRepsEarned : "89"
+      username: "Maung Maung",
+      totalRepsEarned: "89",
     },
     {
-      username : "KaungKaung",
-      totalRepsEarned : "70"
+      username: "KaungKaung",
+      totalRepsEarned: "70",
     },
     {
-      username : "ZawZaw",
-      totalRepsEarned : "69"
+      username: "ZawZaw",
+      totalRepsEarned: "69",
     },
     {
-      username : "MinZaw",
-      totalRepsEarned : "66"
+      username: "MinZaw",
+      totalRepsEarned: "66",
     },
     {
-      username : "Bo Bo",
-      totalRepsEarned : "57"
+      username: "Bo Bo",
+      totalRepsEarned: "57",
     },
     {
-      username : "ET",
-      totalRepsEarned : "54"
+      username: "ET",
+      totalRepsEarned: "54",
     },
     {
-      username : "cloudff7",
-      totalRepsEarned : "32"
+      username: "cloudff7",
+      totalRepsEarned: "32",
     },
-  ]
+  ];
   return (
     <div className="container mx-auto px-4 py-8 min-h-screen">
       <div className="flex md:gap-4">
         <div className="flex-1">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h1 className="text-2xl">
+              <h1 className="text-3xl">
                 <span className="font-mm">ပြန်လည်ကြိုဆိုပါတယ်!</span>{" "}
                 <span className="text-mugi-red-500 text-3xl">{user}</span>
               </h1>
@@ -117,45 +178,9 @@ export default function HomePage() {
             </button>
           </div>
           <div className="bg-white rounded-lg shadow">
-            <HomeQuestionCard
-              title="How to implement authentication with Next.js and Supabase?"
-              tags={["next.js", "authentication", "supabase"]}
-              votes={42}
-              views={1234}
-              answers={5}
-              lastModified={{
-                user: "မောင်မောင်",
-                status: "answered",
-                date: "2025-04-02",
-                time: "15:05",
-              }}
-            />
-            <HomeQuestionCard
-              title="Best practices for React state management in 2024"
-              tags={["react", "javascript", "state-management"]}
-              votes={38}
-              views={982}
-              answers={7}
-              lastModified={{
-                user: "ကျော်ကျော်",
-                status: "modified",
-                date: "2025-04-01",
-                time: "22:30",
-              }}
-            />
-            <HomeQuestionCard
-              title="Understanding TypeScript generics with practical examples for some reason this shit has been long for more than normal. It wont end unless you stop typing. But i will make it as long as possible just to demonstrate line clamp attribute."
-              tags={["typescript", "generics", "javascript"]}
-              votes={56}
-              views={2341}
-              answers={12}
-              lastModified={{
-                user: "စည်သူ",
-                status: "asked",
-                date: "2025-04-01",
-                time: "13:24",
-              }}
-            />
+            {SAMPLE_HOME_CONTENT.map((content) => (
+              <HomeQuestionCard key={content.id} question={content} />
+            ))}
           </div>
         </div>
         <div>

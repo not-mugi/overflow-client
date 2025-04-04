@@ -1,13 +1,24 @@
 export interface Question {
-  id: number;
+  id: string;
   title: string;
   body: string;
   votes: number;
-  answers: number;
   views: number;
+  answers: number;
   tags: string[];
   author: User;
+  history: QuestionHistory;
   createdAt: string;
+}
+
+export interface HomeQuestion {
+  id: string;
+  title: string;
+  votes: number;
+  views: number;
+  answers: number;
+  tags: string[];
+  history: QuestionHistory;
 }
 
 export interface User {
@@ -35,7 +46,7 @@ export interface Topic {
   name: string;
 }
 
-export interface ModifiedHistory {
+export interface QuestionHistory {
   user: string;
   status: string;
   date: string;
