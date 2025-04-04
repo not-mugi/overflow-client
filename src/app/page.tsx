@@ -134,8 +134,8 @@ export default function HomePage() {
               </h1>
             </div>
           </div>
-          <div className="flex items-center justify-between gap-4 mb-6">
-            <span className="text-gray-500">
+          <div className="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-4 mb-6">
+            <span className="text-gray-500 text-base/10 line-clamp-2">
               မူလစာမျက်နှာကို ကြည့်ရူခဲ့သော မှတ်တမ်းများနှင့်
               စောင့်ကြည့်ထားသောတဂ်များ အလိုက်ဖော်ပြထားပါသည်။
             </span>
@@ -144,7 +144,7 @@ export default function HomePage() {
               မေးခွန်းမေးမည်
             </button>
           </div>
-          <div className="bg-white rounded-lg shadow">
+          <div className="bg-white rounded-lg border-gray-500/20 border">
             {SAMPLE_HOME_CONTENT.map((content) => (
               <HomeQuestionCard key={content.id} question={content} />
             ))}
