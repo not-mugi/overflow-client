@@ -7,8 +7,8 @@ import Footer from "@/components/footer";
 
 
 export const metadata: Metadata = {
-  title: "Mugi Overflow",
-  description: "Where burmese developers learn, share and build careers.",
+  title: "Mugi Overflow - Where Burmese Developers Learn, Share and Build careers.",
+  description: "မြန်မာနိုင်ငံမှ programming ကို စိတ်ဝင်စားသူများ ပွင့်လင်းမြင်သာစွာ ပူးပေါင်းပါဝင်နိုင်မည့် အမေးအဖြေကွန်ယက်",
 };
 
 export default function RootLayout({

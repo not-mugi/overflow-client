@@ -37,7 +37,7 @@ export default function BurmeseHistorySpan({ history } : BurmeseHistorySpanProps
   };
 
   return (
-    <span>
+    <span className="font-mm">
       <span className="text-mugi-red-500 font-bold">{history.user}</span> မှ{" "}
       {date} {mn(time[0])} : {mn(time[1])} တွင်{" "}
       {status[history.status as keyof typeof status]}
