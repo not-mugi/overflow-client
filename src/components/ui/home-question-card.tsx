@@ -1,7 +1,7 @@
 import mn from "myanmar-numeral";
 
-import getBurmeseMonth from "@/lib/date";
 import { HomeQuestion } from "@/lib/types";
+import BurmeseHistorySpan from "./burmese-history-span";
 
 interface QuestionCardProps {
   question: HomeQuestion;
@@ -10,36 +10,8 @@ interface QuestionCardProps {
 export default function HomeQuestionCard({
   question: { title, votes, views, answers, tags, history },
 }: QuestionCardProps) {
-  const currentDate = new Date();
-  const modifiedDate = new Date(history.date);
-
-  let date = "";
-  if (
-    currentDate.getDate() === modifiedDate.getDate() &&
-    currentDate.getMonth() === modifiedDate.getMonth() &&
-    currentDate.getFullYear() === modifiedDate.getFullYear()
-  ) {
-    date = "ယနေ့";
-  } else if (currentDate.getFullYear() === modifiedDate.getFullYear()) {
-    const month = getBurmeseMonth(modifiedDate.getMonth());
-    date = `${month} လ ${mn(modifiedDate.getDate())} ရက်နေ့`;
-  } else {
-    const month = getBurmeseMonth(modifiedDate.getMonth());
-    date = `${mn(modifiedDate.getFullYear())}ခုနှစ် ${month} လ ${mn(
-      modifiedDate.getDate()
-    )} ရက်နေ့`;
-  }
-
-  const time = history.time.split(":");
-
-  const status = {
-    answered: "ဖြေခဲ့သည်။",
-    modified: "ပြုပြင်ခဲ့သည်။",
-    asked: "မေးခဲ့သည်။",
-  };
-
   return (
-    <div className="flex flex-col md:flex-row gap-2 md:gap-4 py-4 border-b border-gray-200">
+    <div className="flex flex-col md:flex-row gap-2 md:gap-4 py-4 border-b border-gray-200 hover:bg-gray-50">
       <div className="px-4 flex md:flex-col items-center gap-2 w-full md:w-45 text-sm">
         <div className="flex md:flex-col items-center md:items-end text-gray-600 md:w-full">
           <span className="font-mm font-medium">
@@ -70,11 +42,7 @@ export default function HomeQuestionCard({
           ))}
         </div>
         <div className="font-mm px-4 text-sm flex items-center justify-end w-full">
-          <span>
-            <span className="text-mugi-red-500 font-bold">{history.user}</span>{" "}
-            မှ {date} {mn(time[0])} : {mn(time[1])} တွင်{" "}
-            {status[history.status as keyof typeof status]}
-          </span>
+          <BurmeseHistorySpan history={history} />
         </div>
       </div>
     </div>
