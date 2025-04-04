@@ -40,10 +40,10 @@ export default function WeeklyContribution({
 
   return (
     <div className="hidden lg:block w-80">
-      <div className="bg-white shadow rounded-lg p-4 mb-6">
+      <div className="bg-white border-gray-500/20 border rounded-lg p-4 mb-6">
         <div className="flex justify-between items-center">
           <h1 className="items-center justify-between">
-            <span className="font-mono">Weekly</span> <span className="font-mm">ပါဝင်မှုများ</span>
+            <span className="font-mono font-light tracking-wider">Weekly</span> <span className="font-mm">ပါဝင်မှုများ</span>
           </h1>
           <table className="text-sm font-mm">
             <tbody className="">
@@ -92,7 +92,7 @@ export default function WeeklyContribution({
           </table>
         </div>
 
-        <span className="w-full border-b h-1 border-gray-500 block my-1 p-0"></span>
+        <span className="w-full border-b h-1 border-gray-500/30 block my-1 p-0"></span>
         <table className="w-full">
           <tbody>
             {topContributors.map((tc, rank) => (

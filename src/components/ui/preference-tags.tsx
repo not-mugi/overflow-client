@@ -124,7 +124,7 @@ export default function PreferencesTags() {
   return (
     <>
       <div className="hidden lg:block w-80">
-        <div className="bg-white shadow rounded-lg p-4 mb-6">
+        <div className="bg-white border-gray-500/20 border rounded-lg p-4 mb-6">
           <div className="flex items-center justify-between">
             <span className="font-mm">မူလစာမျက်နှာ ဆက်တင်များ</span>
             <button
@@ -134,7 +134,7 @@ export default function PreferencesTags() {
               <Settings className="h-4 w-4" />
             </button>
           </div>
-          <span className="w-full border-b h-1 border-gray-500 block my-1 p-0 mb-3"></span>
+          <span className="w-full border-b h-1 border-gray-500/30 block my-1 p-0 mb-3"></span>
           {preferences.topics.length === 0 ? (
             <span className="font-mm text-sm">
               <p className="mb-1">စောင့်ကြည့်နေသောတဂ်များမရှိသေးပါ။</p>
