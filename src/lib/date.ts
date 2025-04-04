@@ -1,4 +1,4 @@
-export default function getBurmeseMonth(month: number) {
+export function getBurmeseMonth(month: number) {
   const map : Record<number, string> = {
     0: "ဇန်နဝါရီ",
     1: "ဖေဖော်ဝါရီ",
