@@ -82,10 +82,7 @@ const SAMPLE_HOME_CONTENT: HomeQuestion[] = [
   },
 ];
 
-export default function HomePage() {
-  const user = "Zwe Sithu";
-  const priority: string = "trending";
-  const topContributors = [
+const TOP_CONTRIBUTORS = [
     {
       username: "ကိုကို",
       totalRepsEarned: "154",
@@ -127,6 +124,10 @@ export default function HomePage() {
       totalRepsEarned: "32",
     },
   ];
+
+export default function HomePage() {
+  const user = "Zwe Sithu";
+  const priority: string = "trending";
   return (
     <div className="container mx-auto px-4 py-8 min-h-screen">
       <div className="flex md:gap-4">
@@ -186,7 +187,7 @@ export default function HomePage() {
         <div>
           <Manifesto />
           <PreferencesTags />
-          <WeeklyContribution topContributors={topContributors} />
+          <WeeklyContribution topContributors={TOP_CONTRIBUTORS} />
         </div>
       </div>
     </div>
