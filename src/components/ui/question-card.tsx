@@ -1,73 +1,66 @@
 import Image from "next/image";
-import { ArrowUp, ArrowDown, MessageSquare, Eye } from "lucide-react";
 
 import type { Question } from "@/lib/types";
+import mn from "myanmar-numeral";
+import BurmeseHistorySpan from "./burmese-history-span";
 
 interface QuestionCardProps {
   question: Question;
 }
 
-export default function QuestionCard({ question }: QuestionCardProps) {
+export default function QuestionCard({
+  question: { title, body, votes, views, answers, tags, author, history },
+}: QuestionCardProps) {
   return (
-    <div className="flex gap-4 p-4 border-b border-gray-200 hover:bg-gray-50">
-      <div className="flex flex-col items-center gap-2 min-w-[80px]">
-        <div className="flex flex-col items-center text-gray-600">
-          <button className="p-1 hover:bg-gray-100 rounded">
-            <ArrowUp className="h-6 w-6" />
-          </button>
-          <span className="font-medium">{question.votes}</span>
-          <button className="p-1 hover:bg-gray-100 rounded">
-            <ArrowDown className="h-6 w-6" />
-          </button>
+    <div className="flex flex-col md:flex-row gap-2 md:gap-4 py-4 border-b border-gray-200 hover:bg-gray-50">
+      <div className="px-4 flex md:flex-col items-center gap-2 w-full md:w-45 text-sm">
+        <div className="flex md:flex-col items-center md:items-end text-gray-600 md:w-full">
+          <span className="font-mm font-medium">
+            {mn(votes)} တုံ့ပြန်ချက်များ
+          </span>
         </div>
-        <div className="flex items-center text-green-600">
-          <MessageSquare className="h-4 w-4 mr-1" />
-          <span>{question.answers}</span>
+        <div className="flex md:flex-col items-center md:items-end text-gray-600 md:w-full">
+          <span className="font-mm font-medium">{mn(answers)} အဖြေများ</span>
         </div>
-        <div className="flex items-center text-gray-500">
-          <Eye className="h-4 w-4 mr-1" />
-          <span>{question.views}</span>
+        <div className="flex md:flex-col items-center md:items-end text-gray-600 md:w-full">
+          <span className="font-mm font-medium">
+            {mn(views)} ကြည့်ရှုမှုများ
+          </span>
         </div>
       </div>
-
       <div className="flex-1">
-        <h2 className="text-xl font-medium text-blue-600 hover:text-blue-800">
-          <a href={`/questions/${question.id}`}>{question.title}</a>
-        </h2>
-        <p className="mt-2 text-gray-600 line-clamp-2">{question.body}</p>
-        <div className="mt-4 flex items-center gap-2">
-          {question.tags.map((tag) => (
-            <a
-              key={tag}
-              href={`/tags/${tag}`}
-              className="px-2 py-1 bg-blue-100 text-blue-700 rounded-md text-sm hover:bg-blue-200"
+        <h3 className="px-4 tracking-tight md:text-lg line-clamp-2 mb-1">
+          <a href="#">{title}</a>
+        </h3>
+        <p className="px-4 tracking-wide text-sm line-clamp-2 mb-3">{body}</p>
+        <div className="px-4 flex flex-wrap gap-2 mb-2">
+          {tags.map((tag, index) => (
+            <span
+              key={index}
+              className="px-2 py-1 cursor-pointer bg-mugi-100 text-mugi-red-500 rounded-sm text-xs hover:bg-mugi-200"
             >
               {tag}
-            </a>
+            </span>
           ))}
         </div>
-        <div className="mt-4 flex items-center justify-end">
-          <div className="flex items-center">
+        <div className="px-4 text-sm flex items-center justify-between w-full">
+          <div className="flex gap-2 items-center">
             <Image
-              src={question.author.avatar}
-              alt={question.author.name}
-              width={32}
-              height={32}
-              className="rounded-full"
+              src={author.avatar}
+              className="rounded-sm border-gray-300 border"
+              alt={`${author.name} avatar`}
+              width={18}
+              height={18}
             />
-            <div className="ml-2">
-              <a
-                href={`/users/${question.author.id}`}
-                className="text-blue-600 hover:text-blue-800"
-              >
-                {question.author.name}
-              </a>
-              <p className="text-sm text-gray-500">
-                asked {question.createdAt} • {question.author.reputation}{" "}
-                reputation
-              </p>
-            </div>
+            <span className="text-xs">
+              {author.name}
+            </span>
+            <span className="text-mm">
+              <span className="text-sm mb-0.5 font-bold">{mn(author.reputation)}</span>
+              <span className="text-xs/6 mx-1">ပါဝင်မှု အမှတ်များ</span>
+            </span>
           </div>
+          <BurmeseHistorySpan history={history} />
         </div>
       </div>
     </div>

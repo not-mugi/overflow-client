@@ -1,4 +1,4 @@
-export interface Question {
+export type Question = {
   id: string;
   title: string;
   body: string;
@@ -7,11 +7,11 @@ export interface Question {
   answers: number;
   tags: string[];
   author: User;
+  hasAcceptedAnswer: boolean;
   history: QuestionHistory;
-  createdAt: string;
 }
 
-export interface HomeQuestion {
+export type HomeQuestion = {
   id: string;
   title: string;
   votes: number;
@@ -21,14 +21,14 @@ export interface HomeQuestion {
   history: QuestionHistory;
 }
 
-export interface User {
+export type User = {
   id: number;
   name: string;
   avatar: string;
   reputation: number;
 }
 
-export interface Answer {
+export type Answer = {
   id: number;
   body: string;
   votes: number;
@@ -41,19 +41,32 @@ export interface Preferences {
   topics : Topic[]
 }
 
-export interface Topic {
+export type Topic = {
   id: string;
   name: string;
 }
 
-export interface QuestionHistory {
+export type QuestionHistory = {
   user: string;
   status: string;
   date: string;
   time: string;
 }
 
-export interface Contributor {
+export type Contributor = {
   username : string;
   totalRepsEarned : string
+}
+
+export type PopularContent = {
+  title : string,
+  id : string,
+  content : Content
+} 
+
+export type Content = "article" | "question"
+
+export type PopularTag = {
+  title : string;
+  id : string
 }
