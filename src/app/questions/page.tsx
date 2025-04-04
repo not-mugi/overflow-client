@@ -1,10 +1,12 @@
 import { AppWindowMac, Play } from "lucide-react";
 
-import QuestionCard from "@/components/ui/question-card";
 import mn from "myanmar-numeral";
-import PopularContents from "@/components/ui/popular-contents";
-import { PopularContent, PopularTag } from "@/lib/types";
+
 import PopularTags from "@/components/ui/popular-tags";
+import QuestionCard from "@/components/ui/question-card";
+import PopularContents from "@/components/ui/popular-contents";
+
+import { PopularContent, PopularTag } from "@/lib/types";
 
 const SAMPLE_QUESTIONS = [
   {
